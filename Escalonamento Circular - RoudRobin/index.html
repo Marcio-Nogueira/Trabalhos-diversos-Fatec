@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
+    <title>Round Robin - Escalonamento Circular</title>
+    <script>
+        window.onload = function() {
+            document.getElementById('footer').style.position = "fixed";
+        }
+
+        function desfixarFooter() {
+            document.getElementById('footer').style.position = "static";
+        }
+    </script>
+
+</head>
+
+<body>
+    <header>
+        <h1>Round Robin - Escalonamento Circular</h1>
+    </header>
+    <main>
+
+        <div class="container">
+            <div class="forms">
+                <input type="text" name="processName" id="processName" placeholder="Insira o nome do processo">
+                <input type="number" name="processingTime" id="processingTime" placeholder="Insira o tempo de processo">
+                <button onclick="adcionar()" id="adcionar">ADCIONAR</button>
+            </div>
+        </div>
+
+        <div id="processos">
+            <h2>Processos</h2>
+
+        </div>
+
+        <div>
+            <button onclick="executar()" id="executar">EXECUTAR</button>
+        </div>
+
+        <div id="grafico">
+            <h2>Gráfico</h2>
+            <canvas id="tela" height="0" width="0"></canvas>
+
+
+        </div>
+        <div id="historico">
+            <h2>Histórico</h2>
+
+        </div>
+        <div id="dados">
+            <h2>Dados</h2>
+
+        </div>
+
+    </main>
+
+    <footer id="footer" role="contentinfo">
+        <h5>&copy;2022 Copyright - Grupo 6 (Márcio, Lucas Roberto, Guilherme Oliveira, Guilherme Freire)</h5>
+    </footer>
+
+    <script src="EscalonamentoCircular.js"></script>
+    <script src="Chart.js"></script>
+</body>
+
+</html>
