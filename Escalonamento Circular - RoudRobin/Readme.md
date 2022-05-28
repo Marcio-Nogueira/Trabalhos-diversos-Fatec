@@ -1,4 +1,4 @@
-Projeto da matária de Engenharia de Software do curso Análise e desenvolvimento de sistemas da Fatec - Mogi Mirim.
+Projeto da matéria de Sistemas operacionais do curso Análise e desenvolvimento de sistemas da Fatec - Mogi Mirim.
 
 Descrição dos requisitos:
 
