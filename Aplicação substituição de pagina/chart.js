@@ -28,12 +28,12 @@ function createProcess(name, memoryPages) {
 
 function addProcess() {
     let name = document.getElementById("processName").value;
-    let nPages = document.getElementById("processingTime").value;
+    let nPages = document.getElementById("qtMemoryPage").value;
     let nPagesFormated = parseInt(nPages);
     processList.push(createProcess(name, nPagesFormated));
     // printList();
     document.getElementById("processName").value = '';
-    document.getElementById("processingTime").value = '';
+    document.getElementById("qtMemoryPages").value = '';
 }
 
 function toArray() {
