@@ -1,5 +1,5 @@
-let tela = document.getElementById("tela");
-let ctx = tela.getContext("2d");
+let screen = document.getElementById("screen");
+let ctx = screen.getContext("2d");
 
 const p1 = [1, 2, 3];
 const p2 = [4, 5];
@@ -28,12 +28,17 @@ function createProcess(name, memoryPages) {
 
 function addProcess() {
     let name = document.getElementById("processName").value;
-    let nPages = document.getElementById("processingTime").value;
+    let nPages = document.getElementById("qtMemoryPages").value;
     let nPagesFormated = parseInt(nPages);
+    if (name !='' && nPagesFormated != '') {
     processList.push(createProcess(name, nPagesFormated));
     // printList();
+    alert("✔️ Processo adcionado com sucesso");
     document.getElementById("processName").value = '';
-    document.getElementById("processingTime").value = '';
+    document.getElementById("qtMemoryPages").value = '';
+} else {
+    alert("❌ Todos os campos devem ser preenchidos para adcionar um processo");
+}
 }
 
 function toArray() {
@@ -74,39 +79,43 @@ function mergeProccess() {
     return merged;
 }
 
-console.log(mergeProccess());
+console.log(mergeProccess().length);
 
 
 function screenSize() {
     let cloneList = processList.slice();
-    tela.width = (sumProcessingTime() * 20) + 60;
-    tela.height = (cloneList.length * 20);
-    console.log(tela.width);
-    console.log(tela.height);
+    screen.width = (mergeProccess().length * 20) + 60;
+    screen.height = (cloneList.length * 20);
+    console.log(screen.width);
+    console.log(screen.height);
 }
 
 
 function drawChart() {
     screenSize();
-    console.log(tela.width);
-    for (let j = 60; j < tela.width; j += 20) {
-        for (let i = 0; i < tela.height; i += 20) {
+    console.log(screen.width);
+    for (let j = 60; j < screen.width; j += 20) {
+        for (let i = 0; i < screen.height; i += 20) {
             ctx.rect(j, i, 20, 20);
             ctx.stroke();
         }
     }
     printName();
-    fillChart();
+    // fillChart();
 }
-
+console.log(processList[0].name)
 function printName() {
-    let cloneList = processList.slice();
+    // let cloneList = processList.slice();
     ctx.font = '20px serif';
     index = -1;
-    for (let i = 20; i < tela.height + 20; i += 20) {
-        ctx.fillText(cloneList[++index].name.substr(-20, 4), 0, i - 2);
+    for (let i = 20; i < screen.height + 20; i += 20) {
+        ctx.fillText(processList[++index].name.substr(-20, 4), 0, i - 2);
         ctx.moveTo(0, i);
         ctx.lineTo(60, i);
         ctx.stroke();
     }
+}
+
+function run() {
+    drawChart();
 }
