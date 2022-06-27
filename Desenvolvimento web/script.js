@@ -57,3 +57,44 @@ function sortItens() {
         iterations += 1;
     }
 }
+
+//exercicio 3
+
+
+function zoomIn() {
+    let img = document.getElementsByClassName("zoom");
+    let qtdImg = document.getElementById("container").childElementCount;
+
+    if (img[0].classList.contains("d450")) {
+        console.log("tamanho máximo");
+    } else if (img[0].classList.contains("d150")) {
+        for (let i = 0; i < qtdImg; i++) {
+            img[i].classList.remove("d150");
+            img[i].classList.add("d300");
+        }
+    } else if (img[0].classList.contains("d300")) {
+        for (let i = 0; i < qtdImg; i++) {
+            img[i].classList.remove("d300");
+            img[i].classList.add("d450");
+        }
+    }
+}
+
+function zoomOut() {
+    let img = document.getElementsByClassName("zoom");
+    let qtdImg = document.getElementById("container").childElementCount;
+
+    if (img[0].classList.contains("d450")) {
+        for (let i = 0; i < qtdImg; i++) {
+            img[i].classList.remove("d450");
+            img[i].classList.add("d300");
+        }
+    } else if (img[0].classList.contains("d150")) {
+        console.log("tamanho mínimo");
+    } else if (img[0].classList.contains("d300")) {
+        for (let i = 0; i < qtdImg; i++) {
+            img[i].classList.remove("d300");
+            img[i].classList.add("d150");
+        }
+    }
+}
