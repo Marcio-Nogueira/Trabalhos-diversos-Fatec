@@ -98,3 +98,66 @@ function zoomOut() {
         }
     }
 }
+
+//exercicios apostila 1 
+// 1- Faça um código JavaScript que apresente um popup na tela com a mensagem “Hello World”
+
+//window.onload(alert("Hello World!"));
+
+/* 2 - Faça um código JavaScript que solicite a entrada de dois números inteiros. Então o
+programa deve mostrar um popup contendo a soma entre eles, um popup contendo a
+média, um popup contendo a diferença entre o primeiro e o segundo número e um popup
+contendo o produto deles.*/
+
+function contas(number1, number2) {
+    let soma = number1 + number2;
+    let media = (number1 + number2) / 2;
+    let diferenca = number1 - number2;
+    let produto = number1 * number2;
+    alert(number1 + " + " + number2 + " = " + soma);
+    alert(" Média entre " + number1 + number2 + " = " + media);
+    alert(number1 + " - " + number2 + " = " + diferenca);
+    alert(number1 + " x " + number2 + " = " + produto);
+}
+
+// contas(5, 3);
+
+/*3 – Repita o exercício anterior porém dessa vez apresente os resultados na tela do
+navegador ao invés de através de popups*/
+
+function contas2(number1, number2) {
+    const conteudo = document.getElementById("lista1");
+    let soma = number1 + number2;
+    let media = (number1 + number2) / 2;
+    let diferenca = number1 - number2;
+    let produto = number1 * number2;
+    conteudo.appendChild(document.createTextNode(number1 + " + " + number2 + " = " + soma + "\n"));
+    conteudo.appendChild(document.createTextNode(" Média entre " + number1 + number2 + " = " + media));
+    conteudo.appendChild(document.createTextNode(number1 + " - " + number2 + " = " + diferenca));
+    conteudo.appendChild(document.createTextNode(number1 + " x " + number2 + " = " + produto));
+}
+
+contas2(5, 3);
+
+/* 4 - Faça um código JavaScript que solicite que seja escolhida a opção 1, opção 2 ou opção
+3. Após escolhida a opção, mostre a opção que ele escolheu ou caso ele tenha escolhida
+uma opção inexistente, apresente a mensagem “Opção inválida”.*/
+
+function opcoes(opcao) {
+    console.log("Digite o número de uma das seguintes opções:\nOpção 1\nOpção 2\nOpção 3");
+    // if (opcao === 1) {
+    //     console.log("Opção 1");
+    // } else if (opcao === 2) {
+    //     console.log("Opção 2");
+    // } else if (opcao === 3) {
+    //     console.log("Opção 3");
+    // } else {
+    //     console.log("Opção inválida");
+    // }
+    //if else mais curto...
+    (opcao === 1) ? console.log("Opção 1"): (opcao === 2) ? console.log("Opção 2") :
+        (opcao === 3) ? console.log("Opção 3") :
+        console.log("Opção inválida");
+}
+
+opcoes(2);
