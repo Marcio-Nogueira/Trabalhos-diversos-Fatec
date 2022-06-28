@@ -131,10 +131,10 @@ function contas2(number1, number2) {
     let media = (number1 + number2) / 2;
     let diferenca = number1 - number2;
     let produto = number1 * number2;
-    conteudo.appendChild(document.createTextNode(number1 + " + " + number2 + " = " + soma + "\n"));
-    conteudo.appendChild(document.createTextNode(" Média entre " + number1 + number2 + " = " + media));
-    conteudo.appendChild(document.createTextNode(number1 + " - " + number2 + " = " + diferenca));
-    conteudo.appendChild(document.createTextNode(number1 + " x " + number2 + " = " + produto));
+    conteudo.appendChild(document.createTextNode(number1 + " + " + number2 + " = " + soma + ";\n"));
+    conteudo.appendChild(document.createTextNode("Média entre " + number1 + " e " + number2 + " = " + media + ";\n"));
+    conteudo.appendChild(document.createTextNode(number1 + " - " + number2 + " = " + diferenca + ";\n"));
+    conteudo.appendChild(document.createTextNode(number1 + " x " + number2 + " = " + produto + ";\n"));
 }
 
 contas2(5, 3);
@@ -161,3 +161,69 @@ function opcoes(opcao) {
 }
 
 opcoes(2);
+
+//Lista 2 
+/*• 1 – Dado o array linguagens contendo: ["HTML", "CSS", "JavaScript", "C#", "Assembly“], crie
+uma função que recebe um vetor e mostra o conteúdo dele usando a função console.log.*/
+
+let array = ["HTML", "CSS", "JavaScript", "C#", "Assembly"];
+const showArray = (array) => {
+    console.log(array);
+}
+showArray(array);
+
+/*• 2 – Crie um objeto endereço com os seguintes atributos:
+✓ Rua: Ariovaldo Silveira Franco
+✓ Número: 567
+✓ Bairro : Jardim 31 de Março
+✓ Cidade: Mogi Mirim
+✓ UF: SP
+• Após criar o objeto, crie uma função que receba o objeto endereço e retorne os seus
+atributos*/
+
+const endereco = {
+    Rua: "Ariovaldo Silveira Franco",
+    Número: "567",
+    Bairro: "Jardim 31 de Março",
+    Cidade: "Mogi Mirim",
+    UF: "SP"
+}
+
+const mostrarDados = (dados) => {
+    console.log(dados);
+}
+
+mostrarDados(endereco);
+
+/*• 3 – Crie uma função que dado um intervalo (entre x e y) exiba todos número pares*/
+const imprimirPares = (x, y) => {
+    if (x % 2 === 0) {
+        for (let i = x; i <= y; i += 2) {
+            console.log(i);
+        }
+    } else {
+        for (let i = x + 1; i <= y; i += 2) {
+            console.log(i);
+        }
+    }
+}
+imprimirPares(6, 18);
+
+/*• 4 – Crie uma página que contenha dois botões. Um deles possui o texto “Fale comigo!”, e
+após clicado ele deve mudar o seu texto para “Texto alterado!!” e acima dele deve
+aparecer um texto (na página mesmo) “Olá pessoa, deu certo!”. O outro botão deve ter
+o texto “Altere a cor do fundo” e ao clicar nele a cor de fundo da página deve ser
+alterada para uma cor aleatória*/
+
+function faleComigo() {
+    document.getElementById("texto").innerHTML = `Olá pessoa, deu certo!`
+    document.getElementById("faleComigo").innerText = `Texto Alterado!!`;
+}
+
+function alterarCor() {
+    randomRed = Math.floor(Math.random() * 255);
+    randomGreen = Math.floor(Math.random() * 255);
+    randomBlue = Math.floor(Math.random() * 255);
+    novaCor = "rgb(" + randomRed + "," + randomGreen + "," + randomBlue + ")";
+    document.body.style.backgroundColor = novaCor;
+}

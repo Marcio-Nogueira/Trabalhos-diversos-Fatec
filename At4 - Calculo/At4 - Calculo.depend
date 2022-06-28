@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1651092177 source:c:\users\mar\desktop\programação\calculo\at4 - calculo\main.c
-	<stdio.h>
-	<stdlib.h>
-	<math.h>
-	<locale.h>
-
